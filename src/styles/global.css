@@ -1,7 +1,38 @@
+/* ── Variables ───────────────────────────────────────────── */
+:root {
+  --black:        #141413;
+  --black-light:  #312f2f;
+  --white:        #faf9f5;
+  --white-dark:   #F0F1F2;
+  --grey:         #87867f;
+  --accent:       #D97757;
+
+  --bg:           var(--white);
+  --text:         var(--black);
+  --nav-bg:       var(--black);
+  --nav-text:     var(--white);
+  --link:         var(--black);
+  --bg-accent:     var(--white-dark);
+}
+
+html.dark {
+  --bg:           var(--black);
+  --text:         var(--white);
+  --nav-bg:       var(--black-light);
+  --nav-text:     var(--white);
+  --link:         var(--accent);
+  --bg-accent:    var(--black-light);
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
-  background-color: #1E1E1E;
+  background-color: var(--bg);
   font-family: var(--inter-font), sans-serif;
-  color: #f5f5f4;
+  color: var(--text);
 }
 
 body {
@@ -12,20 +43,33 @@ body {
   line-height: 1.5;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-h1 {
+.heading-xl {
   margin: 1rem 0;
   font-size: 2.5rem;
+  font-weight: 700;
 }
 
-/* nav styles */
+.heading-lg {
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.heading-sm {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+a {
+  color: var(--link);
+}
+
+/* ── Nav ─────────────────────────────────────────────────── */
 .menu {
-  background-color: #0d0950;
+  background-color: var(--nav-bg);
   border: none;
-  color: #fff;
+  color: var(--nav-text);
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
@@ -45,12 +89,13 @@ h1 {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0d0950;
+  color: var(--nav-text);
 }
 
 .nav-links a:hover,
-.nav-links a:focus{
-  background-color: #ff9776;
+.nav-links a:focus {
+  background-color: var(--accent);
+  color: var(--white);
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
@@ -58,6 +103,10 @@ h1 {
 }
 
 @media screen and (min-width: 636px) {
+  .menu {
+    display: none;
+  }
+
   .nav-links {
     margin-left: 5em;
     display: block;
@@ -70,8 +119,16 @@ h1 {
     display: inline-block;
     padding: 15px 20px;
   }
+}
 
-  .menu {
-    display: none;
-  }
+/* ── Random ─────────────────────────────────────────────────── */
+.bundleParent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.bundleItem {
+  padding: 6px 12px;
+  background: var(--bg-accent);
+  border-radius: 100px;
 }

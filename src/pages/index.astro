@@ -1,9 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Greeting from '../components/Greeting';
 const pageTitle = "Astro Tutorial";
 ---
 
 <Layout pageTitle={pageTitle}>
-		<h1>{pageTitle}</h1>
+	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+	<div>
+		<p>
+			Nostrud aliquip ullamco velit magna incididunt. Fugiat eiusmod eiusmod ex do.
+		</p>
+		<p>
+			Sunt culpa voluptate aliquip laboris ullamco aliqua minim nostrud tempor nisi ea tempor reprehenderit. Aliquip voluptate in ut occaecat ut culpa esse consequat ex enim labore. Veniam in Lorem ut ullamco. Ea adipisicing mollit cillum sunt exercitation officia proident dolor officia nisi sit consequat incididunt ea amet.
+		</p>
+		<p>
+			And here is an email <a href="mailto:sam@samuel-king.com" target="_blank">sam@samuel-king.com</a>
+		</p>
+	</div>
+	<h2 class="heading-sm">A bundle of words</h2>
+	<div class="bundleParent">
+		<div class="bundleItem">Words will go here.</div>
+		<div class="bundleItem">Words will also go here.</div>
+		<div class="bundleItem">Another one will go here.</div>
+		<div class="bundleItem">Tyring to keep them a bit long.</div>
+		<div class="bundleItem">I'll keep going.</div>
+		<div class="bundleItem">Aaaand I'm finished.</div>
+	</div>
 </Layout>
