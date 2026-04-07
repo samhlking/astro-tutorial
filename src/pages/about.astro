@@ -1,4 +1,6 @@
 ---
+import Layout from '../layouts/Layout.astro';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -13,21 +15,11 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "crimson";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<a href="/astro-tutorial/">Home</a>
-        <a href="/astro-tutorial/about/">About</a>
-        <a href="/astro-tutorial/blog/">Blog</a>
+<Layout pageTitle={pageTitle}>
         
         <h1>{pageTitle}</h1>
         <p>Dolore sunt qui eiusmod exercitation ea ex. Eiusmod dolor ad velit excepteur qui nulla consequat pariatur sit id ipsum. Nulla occaecat do exercitation ad. Consectetur sit reprehenderit occaecat aute aute quis in.</p>
@@ -47,12 +39,11 @@ const goal = 3;
 		</ul>
 		<p>My skills are:</p>
 		<ul>
-			{skills.map((skill) => <li>{skill}</li>)}
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 		{happy && <p>I am happy to be learning Astro!</p>}
 
 		{finished && <p>I finished this tutorial!</p>}
 
 		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-	</body>
-</html>
+</Layout>

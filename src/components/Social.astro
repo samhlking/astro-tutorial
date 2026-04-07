@@ -1,0 +1,25 @@
+---
+const { platform, username } = Astro.props;
+---
+<a class="socialLinks" href={`https://www.${platform}.com/${username}`}>{platform}</a>
+
+<style>
+    a {
+    display: inline-block;
+    transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+    padding: 10px 24px;
+    background-color: transparent;
+    text-decoration: none;
+    border: 1px solid rgb(87, 83, 78);
+    border-radius: 100px;
+    color: inherit;
+  }
+  a:hover, a:focus {
+    background-color: rgb(49, 47, 47);
+    border-color: rgb(49, 47, 47);
+    transform: translateY(-5px);
+  }
+</style>
