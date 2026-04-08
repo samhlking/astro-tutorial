@@ -1,6 +1,8 @@
-const menu = document.querySelector('.menu');
+const menuButton = document.getElementById('menu-button');
+const mainMenu = document.getElementById('main-menu');
 
-menu?.addEventListener('click', () => {
-  const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-  menu.setAttribute('aria-expanded', `${!isExpanded}`);
+menuButton?.addEventListener('click', () => {
+  const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', `${!isExpanded}`);
+  mainMenu?.classList.toggle('hidden');
 });

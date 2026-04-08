@@ -9,30 +9,11 @@ const { frontmatter } = Astro.props;
   <p>Written by: {frontmatter.author}</p>
   <img src={frontmatter.image.url} width="100%" alt={frontmatter.image.alt} />
 
-  <div class="tags">
+  <div class="flex flex-wrap gap-2">
     {frontmatter.tags.map((tag: string) => (
-      <p class="tag"><a href={`/astro-tutorial/tags/${tag}`}>{tag}</a></p>
+      <a href={`/astro-tutorial/tags/${tag}`} class="px-3 py-1.5 bg-stone-100 border border-stone-300 text-stone-700 dark:bg-stone-800 dark:border-stone-700 dark:text-stone-300 rounded-full text-sm hover:bg-stone-200 hover:border-stone-400 dark:hover:bg-stone-700 dark:hover:border-stone-500 focus:outline-none focus:ring-2 focus:ring-accent transition-colors">{tag}</a>
     ))}
   </div>
 
   <slot />
 </Layout>
-<style>
-  a {
-    color: #00539F;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
-    font-size: 1.15em;
-    background-color: #F8FCFD;
-  }
-</style>

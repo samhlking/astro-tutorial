@@ -1,134 +1,42 @@
-/* ── Variables ───────────────────────────────────────────── */
-:root {
-  --black:        #141413;
-  --black-light:  #312f2f;
-  --white:        #faf9f5;
-  --white-dark:   #F0F1F2;
-  --grey:         #87867f;
-  --accent:       #D97757;
+@import "tailwindcss";
 
-  --bg:           var(--white);
-  --text:         var(--black);
-  --nav-bg:       var(--black);
-  --nav-text:     var(--white);
-  --link:         var(--black);
-  --bg-accent:     var(--white-dark);
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: #D97757;
+  --font-inter: var(--inter-font), sans-serif;
 }
 
-html.dark {
-  --bg:           var(--black);
-  --text:         var(--white);
-  --nav-bg:       var(--black-light);
-  --nav-text:     var(--white);
-  --link:         var(--accent);
-  --bg-accent:    var(--black-light);
-}
-
-/* ── Base ────────────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  background-color: var(--bg);
-  font-family: var(--inter-font), sans-serif;
-  color: var(--text);
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 680px;
-  padding: 24px;
-  line-height: 1.5;
-}
-
-.heading-xl {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.heading-lg {
-  margin: 1rem 0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.heading-sm {
-  margin: 1rem 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-a {
-  color: var(--link);
-}
-
-/* ── Nav ─────────────────────────────────────────────────── */
-.menu {
-  background-color: var(--nav-bg);
-  border: none;
-  color: var(--nav-text);
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
-}
-
-.nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
-}
-
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--nav-text);
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: var(--accent);
-  color: var(--white);
-}
-
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
-}
-
-@media screen and (min-width: 636px) {
-  .menu {
-    display: none;
+@layer base {
+  html {
+    font-family: var(--font-inter);
+    @apply antialiased;
   }
 
-  .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
+  body {
+    @apply text-stone-700 dark:text-stone-300 p-6;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 680px;
+    line-height: 1.5;
   }
 
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-stone-900 dark:text-white font-semibold;
   }
-}
 
-/* ── Random ─────────────────────────────────────────────────── */
-.bundleParent {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.bundleItem {
-  padding: 6px 12px;
-  background: var(--bg-accent);
-  border-radius: 100px;
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-xl mt-4 mb-2;
+  }
+
+  a {
+    @apply text-stone-700 dark:text-stone-300 hover:text-accent dark:hover:text-accent transition-colors;
+  }
+  
+  button {
+    @apply bg-accent rounded-xl py-1.5 px-3 text-white font-medium cursor-pointer;
+  }
 }

@@ -3,19 +3,20 @@ import Navigation from './Navigation.astro';
 import Menu from './Menu.astro';
 import ThemeIcon from './ThemeIcon.astro';
 ---
-<header>
+<header class="pb-6">
   <nav>
-    <div>
-      <ThemeIcon />
-      <Menu />
-    </div>
     <Navigation />
+    <div>
+      <Menu />
+      <ThemeIcon />
+    </div>
   </nav>
 </header>
 
 <style>
-  div {
+  nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 </style>
