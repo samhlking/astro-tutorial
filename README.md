@@ -1,43 +1,17 @@
-# Astro Starter Kit: Minimal
+# Learning Astro: Following the official tutorial (+ experiments)
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This small project is where I learnt all about Astro. To begin with, I just followed the official [tutorial](https://docs.astro.build/en/tutorial/) which teaches you the basics of Astro.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+There are 6 units inside the tutorial:
 
-## 🚀 Project Structure
+- Unit 1 - Setup
+- Unit 2 - Pages
+- Unit 3 - Components
+- Unit 4 - Layouts
+- Unit 5 - Astro API
+- Unit 6 - Astro Islands
+    - There is also an optional tutorial to turn your blog into a [content collection](https://docs.astro.build/en/guides/content-collections/), which I did.
 
-Inside of your Astro project, you'll see the following folders and files:
+## After the tutorial
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+After getting the basics down, I proceeded to experiment with other integrations, such as [Tailwind 4](https://docs.astro.build/en/guides/styling/#tailwind).
